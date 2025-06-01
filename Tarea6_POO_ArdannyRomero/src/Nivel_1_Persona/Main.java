@@ -12,18 +12,18 @@ public class Main {
 
         do{
         System.out.println("* * * * * * * Saludos usuario! * * * * * * *\nIdentificate");
-        System.out.println("\t1. Cliente \n\t2. Empleado \n\t3. Salir");
+        System.out.println("\t1. Cliente \n\t2. Empleado \n\t0. Salir");
         System.out.print("Elige una opción: "); opcion_identificacon = sc.nextInt(); sc.nextLine();
 
             if (opcion_identificacon == 1){
 
-                Cliente cliente = new Cliente(null,null,null,null); // Creo un cliente null y luego le llamo a ponerle datos
+                Cliente cliente = new Cliente(null,null,null,null, null); // Creo un cliente null y luego le llamo a ponerle datos
                 cliente.datos(); // Creo una variable con la clase y le asigno los datos (con esto quito los null)
 
                 int opcion;
                 do {
                     System.out.printf("\n* * * * * * * * * * * Sistema Bancario * * * * * * * * * * * \nBienvenido %s \nRecuerda Ingresar al sistema para cualquier actividad\n", cliente.nombre);
-                    System.out.println("\t1. Ingresar al Sistema \n\t2. Registrar Nueva Cuenta \n\t3. Agregar Tarjeta de Crédito a Cuenta \n\t4. Solicitar Préstamo \n\t5. Mostrar Rol del Cliente \n\t6. Actualizar datos del Cliente \n\t7. Ver Resumen financiero \n\t0. Salir");
+                    System.out.println("\t1. Ingresar al Sistema \n\t2. Registrar Nueva Cuenta \n\t3. Agregar Tarjeta de Crédito a Cuenta \n\t4. Solicitar Préstamo \n\t5. Mostrar Rol \n\t6. Actualizar datos del Cliente \n\t7. Ver Resumen financiero \n\t0. Salir");
                     System.out.print("Opcion: "); opcion = sc.nextInt(); sc.nextLine();
                     switch (opcion) {
                         case 1:
@@ -64,12 +64,29 @@ public class Main {
                 } while (opcion != 0);
             }
             else if (opcion_identificacon == 2) {
-                System.out.printf("\nEmpelado :)\n");
+
                 int opcion_ident_ramas_empleado;
-                // Aqui el empreado ve si se queda en empleado normal o va a una de las subramas
-                // Le meto loguin?
+                System.out.println("* * * * * * * Saludos Empelado! * * * * * * *\nIdentificate");
+                System.out.println("\t1. Cajero \n\t2. Balcon/Servicios \n\t3. Gerente \n\t0. Salir"); opcion_ident_ramas_empleado = sc.nextInt(); sc.nextLine();
+                do {
+                    switch (opcion_ident_ramas_empleado){
+                        case 1:
+                            //parte cajero
+                            break;
+                        case 2:
+                            // parte balcon
+                            break;
+                        case 3:
+                            //gerente
+                            break;
+                        case 0:
+                            System.out.println("\nSaliendo del apartado\n");
+                            break;
+                    }
+                }while (opcion_ident_ramas_empleado != 0);
+
             }
-        } while (opcion_identificacon != 3);
+        } while (opcion_identificacon != 0);
 
         sc.close(); // Cierra el scanner cuando ya no se necesite
 

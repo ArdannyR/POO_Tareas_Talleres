@@ -8,14 +8,16 @@ public abstract class Persona { // Clase abstracta: clase que no puede ser insta
     protected String cedula;
     protected String direccion;
     protected String telefono;
+    protected String rol;
 
     public Scanner sc = new Scanner(System.in);
 
-    public Persona (String nombre, String cedula, String direccion, String telefono){ // Una clase abstracta puede tener un constructor, pero no puede ser abstracto.
+    public Persona (String nombre, String cedula, String direccion, String telefono, String rol){ // Una clase abstracta puede tener un constructor, pero no puede ser abstracto.
         this.nombre = nombre;
         this.cedula = cedula;
         this.direccion = direccion;
         this.telefono = telefono;
+        this.rol = rol;
     }
 
     public void actualizar_datos(String nombre, String cedula, String direccion, String telefono){

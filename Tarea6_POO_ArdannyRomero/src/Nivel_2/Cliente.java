@@ -25,19 +25,20 @@ public class Cliente extends Persona {
 
     //Ojala pronto veamos algo como diccionarios para el manejo de estos datos :D
 
-    public Cliente(String nombre, String cedula, String direccion, String telefono) { // Dejo solo esos datos a pedir ya que lo otro dependera de los metodos
-        super(nombre, cedula, direccion, telefono);
+    public Cliente(String nombre, String cedula, String direccion, String telefono, String rol) { // Dejo solo esos datos a pedir ya que lo otro dependera de los metodos
+        super(nombre, cedula, direccion, telefono, rol);
         this.cuenta_activa = false;
         this.nombre_cuenta = nombre_cuenta;
         this.tipo_cuenta = tipo_cuenta;
         this.monto = monto;
         this.num_tarjeta_credito = num_tarjeta_credito;
         this.monto_base = 0;
+        this.rol = "Cliente";
     }
 
     @Override
     public void mostrar_rol() {
-        System.out.printf("\nRol: %s\n", tipo_cuenta);
+        System.out.printf("\nRol: %s\n", rol);
     }
 
     public boolean ingresar_al_sistema(){
@@ -109,6 +110,7 @@ public class Cliente extends Persona {
         System.out.print(" -- Cedula: "); this.cedula = sc.nextLine();
         System.out.print(" -- Direccion: "); this.direccion = sc.nextLine();
         System.out.print(" -- Telefono: "); this.telefono = sc.nextLine();
+        this.rol = "Cliente";
     }
 
 }
