@@ -1,6 +1,7 @@
 package Nivel_1_Persona;
 
 import Nivel_2.Cliente;
+import Nivel_2.Empleado;
 
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class Main {
 
             if (opcion_identificacon == 1){
 
-                Cliente cliente = new Cliente(null,null,null,null, null); // Creo un cliente null y luego le llamo a ponerle datos
+                Cliente cliente = new Cliente(null,null,null,null, null, null); // Creo un cliente null y luego le llamo a ponerle datos
                 cliente.datos(); // Creo una variable con la clase y le asigno los datos (con esto quito los null)
 
                 int opcion;
@@ -65,25 +66,47 @@ public class Main {
             }
             else if (opcion_identificacon == 2) {
 
-                int opcion_ident_ramas_empleado;
-                System.out.println("* * * * * * * Saludos Empelado! * * * * * * *\nIdentificate");
-                System.out.println("\t1. Cajero \n\t2. Balcon/Servicios \n\t3. Gerente \n\t0. Salir"); opcion_ident_ramas_empleado = sc.nextInt(); sc.nextLine();
-                do {
-                    switch (opcion_ident_ramas_empleado){
-                        case 1:
-                            //parte cajero
-                            break;
-                        case 2:
-                            // parte balcon
-                            break;
-                        case 3:
-                            //gerente
-                            break;
-                        case 0:
-                            System.out.println("\nSaliendo del apartado\n");
-                            break;
+                    int opcion_ident_ramas_empleado;
+                    System.out.println("* * * * * * * Saludos Empelado! * * * * * * *\nIdentificate");
+                    System.out.print("Ingrese su usario: "); String usuario = sc.nextLine();
+                    System.out.print("Ingrese su clave: "); String clave = sc.nextLine();
+                    Empleado empleado = new Empleado("Empleado", usuario ,clave);
+
+                    if (empleado.autentificar_empleado()) {
+                        System.out.println("* * * * * * * Saludos Empelado! * * * * * * *\nSelecciona");
+                        System.out.println("\t1. Crear Cuenta para Cliente \n\t2. Modificar Datos del Cliente \n\t3. Registrar Prestamos \n\t4. Cerrar Cuenta \n\t5. Cambiar Rol de Empleado \n\t0. Salir");
+                        System.out.print("Opcion: "); opcion_ident_ramas_empleado = sc.nextInt(); sc.nextLine();
+
+                        do {
+                            Cliente cliente = new Cliente(null, null, null, null, "Cliente", null); // Neceito u null para luego irlo llenando
+                            switch (opcion_ident_ramas_empleado) {
+                                case 1:
+                                    System.out.print("\nIngrese el nombre de la cuenta a crear para el cliente: "); String nombre_cuenta = sc.nextLine();
+                                    empleado.crear_cuenta_para_cliente(cliente, nombre_cuenta);
+                                    break;
+                                case 2:
+                                    empleado.modificar_datos_cliente(cliente);
+                                    break;
+                                case 3:
+                                    System.out.print("\nIngrese el monto del préstamo a registrar: "); double monto_prestamo = sc.nextDouble(); sc.nextLine();
+                                    empleado.registrar_prestamo(cliente, monto_prestamo);
+                                    break;
+                                case 4:
+                                    System.out.print("\nIngrese el nombre de la cuenta que desea cerrar: "); String cuenta_cerrar = sc.nextLine();
+                                    empleado.cerrar_cuenta(cliente, cuenta_cerrar);
+                                    break;
+                                case 5:
+                                    // cambiar rol
+                                    break;
+                                case 0:
+                                    System.out.println("\nSaliendo del apartado\n");
+                                    break;
+                            }
+                        } while (opcion_ident_ramas_empleado != 0);
                     }
-                }while (opcion_ident_ramas_empleado != 0);
+                    else{
+                        System.out.print("hola?");
+                    }
 
             }
         } while (opcion_identificacon != 0);

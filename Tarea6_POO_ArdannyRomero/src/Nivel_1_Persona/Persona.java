@@ -20,6 +20,10 @@ public abstract class Persona { // Clase abstracta: clase que no puede ser insta
         this.rol = rol;
     }
 
+    public Persona (String rol){ // Esto para empleados, suponiendo que no necesito darle tanta info a empleado
+        this.rol = rol;
+    }
+
     public void actualizar_datos(String nombre, String cedula, String direccion, String telefono){
         this.nombre = nombre;
         this.cedula = cedula;

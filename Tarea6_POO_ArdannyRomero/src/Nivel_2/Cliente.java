@@ -15,6 +15,7 @@ public class Cliente extends Persona {
 
     public List<List<String>> cuentas = new ArrayList<>(); // Esta es una lista de listas (matriz) Se que no hemos visto esto a profundidad en clases, mas la anteior se nos dios libertad a indagar y suarlas
     public List<Double> acumulacion_montos = new ArrayList<>(); // Esta lista lo la tenia previsto pero la agrego para el resumane financiero
+    public List<Double> prestamos = new ArrayList<>(); // Esta necesito para alho en empleado
     // Funcionamiento
     // Lista<String> usuario = new ArrayList<>();
     // usuario.add("alguna info")
@@ -25,7 +26,7 @@ public class Cliente extends Persona {
 
     //Ojala pronto veamos algo como diccionarios para el manejo de estos datos :D
 
-    public Cliente(String nombre, String cedula, String direccion, String telefono, String rol) { // Dejo solo esos datos a pedir ya que lo otro dependera de los metodos
+    public Cliente(String nombre, String cedula, String direccion, String telefono, String rol, String nombre_cuenta) { // Dejo solo esos datos a pedir ya que lo otro dependera de los metodos
         super(nombre, cedula, direccion, telefono, rol);
         this.cuenta_activa = false;
         this.nombre_cuenta = nombre_cuenta;
@@ -34,6 +35,7 @@ public class Cliente extends Persona {
         this.num_tarjeta_credito = num_tarjeta_credito;
         this.monto_base = 0;
         this.rol = "Cliente";
+        this.nombre_cuenta = nombre_cuenta;
     }
 
     @Override
