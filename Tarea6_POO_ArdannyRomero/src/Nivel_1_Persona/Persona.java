@@ -1,9 +1,5 @@
 package Nivel_1_Persona;
 
-import Nivel_2.Cliente;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public abstract class Persona { // Clase abstracta: clase que no puede ser instanciada directamente

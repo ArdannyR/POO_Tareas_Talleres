@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Cliente extends Persona {
-    boolean cuenta_activa;
-    String nombre_cuenta;
-    String tipo_cuenta;
-    double monto;
-    String num_tarjeta_credito;
-    private double monto_base; // Este tampoco era necesario, pero... quiero que el codigo tenga sentido :/
+    protected boolean cuenta_activa;
+    protected String nombre_cuenta;
+    protected String tipo_cuenta;
+    protected double monto;
+    protected String num_tarjeta_credito;
+    protected double monto_base; // Este tampoco era necesario, pero... quiero que el codigo tenga sentido :/
 
     public List<List<String>> cuentas = new ArrayList<>(); // Esta es una lista de listas (matriz) Se que no hemos visto esto a profundidad en clases, mas la anteior se nos dios libertad a indagar y suarlas
     public List<Double> acumulacion_montos = new ArrayList<>(); // Esta lista lo la tenia previsto pero la agrego para el resumane financiero
@@ -95,20 +95,20 @@ public class Cliente extends Persona {
         if (acumulacion_montos.isEmpty()){
             System.out.print("\nNo hay nada... \nIntenta solicitar un prestamo \n");
         }
-        System.out.printf("\nTu monto actual es de $%d\nAun esta en revision los pedidos de: ", this.monto_base);
-        for (int i = 0; i < acumulacion_montos.size(); i++) {
-            System.out.printf("Monto %d: %d\n", i + 1, acumulacion_montos.get(i)); // Recorrer con un for y imprimir por indices, esto es basico
+        else {
+            System.out.printf("\nTu monto actual es de $%.2f\nAun esta en revision los pedidos de: \n", this.monto_base);
+            for (int i = 0; i < acumulacion_montos.size(); i++) {
+                System.out.printf(" * Monto %d: %.2f\n", i + 1, acumulacion_montos.get(i)); // Recorrer con un for y imprimir por indices, esto es basico
+            }
         }
     }
 
-    public Cliente datos(){ // Este metodo no es parte del deber pero lo coloco para ahorrar lineas
-        System.out.print("\nNesecitamos que ingrese sus datos... pls\n");
-        System.out.print(" -- Nombre: "); String nombre = sc.nextLine();
-        System.out.print(" -- Cedula: "); String cedula = sc.nextLine();
-        System.out.print(" -- Direccion: "); String direccion = sc.nextLine();
-        System.out.print(" -- Telefono: "); String telefono = sc.nextLine();
-        Cliente cliente_de_prueba = new Cliente(nombre, cedula, direccion, telefono);
-        return cliente_de_prueba; // Descubir que colocando la clase se hace un metodo que retoner objetos. Los objetos chocan?
+    public void datos(){
+        System.out.print("\nNecesitamos que ingrese sus datos \n");
+        System.out.print(" -- Nombre: "); this.nombre = sc.nextLine();
+        System.out.print(" -- Cedula: "); this.cedula = sc.nextLine();
+        System.out.print(" -- Direccion: "); this.direccion = sc.nextLine();
+        System.out.print(" -- Telefono: "); this.telefono = sc.nextLine();
     }
 
 }

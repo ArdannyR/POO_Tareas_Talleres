@@ -17,8 +17,8 @@ public class Main {
 
             if (opcion_identificacon == 1){
 
-                Cliente cliente_null = new Cliente(null,null,null,null); // Creo un cliente null y luego le llamo a ponerle datos
-                Cliente cliente = cliente_null.datos(); // Creo una variable con la clase y le asigno los datos (con esto quito los null)
+                Cliente cliente = new Cliente(null,null,null,null); // Creo un cliente null y luego le llamo a ponerle datos
+                cliente.datos(); // Creo una variable con la clase y le asigno los datos (con esto quito los null)
 
                 int opcion;
                 do {
