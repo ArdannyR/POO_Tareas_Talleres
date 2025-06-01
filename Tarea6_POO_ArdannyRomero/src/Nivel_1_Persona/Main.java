@@ -88,7 +88,7 @@ public class Main {
             }
         } while (opcion_identificacon != 0);
 
-        sc.close(); // Cierra el scanner cuando ya no se necesite
+        sc.close();
 
     }
 }
