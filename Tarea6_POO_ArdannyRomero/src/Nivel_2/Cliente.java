@@ -115,5 +115,54 @@ public class Cliente extends Persona {
         this.rol = "Cliente";
     }
 
+    // Metodos get and set
+
+    public boolean isCuenta_activa() {
+        return cuenta_activa;
+    }
+
+    public void setCuenta_activa(boolean cuenta_activa) {
+        this.cuenta_activa = cuenta_activa;
+    }
+
+    public String getNombre_cuenta() {
+        return nombre_cuenta;
+    }
+
+    public void setNombre_cuenta(String nombre_cuenta) {
+        this.nombre_cuenta = nombre_cuenta;
+    }
+
+    public String getTipo_cuenta() {
+        return tipo_cuenta;
+    }
+
+    public void setTipo_cuenta(String tipo_cuenta) {
+        this.tipo_cuenta = tipo_cuenta;
+    }
+
+    public double getMonto() {
+        return monto;
+    }
+
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }
+
+    public String getNum_tarjeta_credito() {
+        return num_tarjeta_credito;
+    }
+
+    public void setNum_tarjeta_credito(String num_tarjeta_credito) {
+        this.num_tarjeta_credito = num_tarjeta_credito;
+    }
+
+    public double getMonto_base() {
+        return monto_base;
+    }
+
+    public void setMonto_base(double monto_base) {
+        this.monto_base = monto_base;
+    }
 }
 
