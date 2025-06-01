@@ -11,26 +11,38 @@ public class Cliente extends Persona {
     String tipo_cuenta;
     double monto;
     String num_tarjeta_credito;
+    private double monto_base; // Este tampoco era necesario, pero... quiero que el codigo tenga sentido :/
 
-    private Scanner sc = new Scanner(System.in);
+    public List<List<String>> cuentas = new ArrayList<>(); // Esta es una lista de listas (matriz) Se que no hemos visto esto a profundidad en clases, mas la anteior se nos dios libertad a indagar y suarlas
+    public List<Double> acumulacion_montos = new ArrayList<>(); // Esta lista lo la tenia previsto pero la agrego para el resumane financiero
+    // Funcionamiento
+    // Lista<String> usuario = new ArrayList<>();
+    // usuario.add("alguna info")
+    // cuentas.add(usuario)
 
-    public Cliente(String nombre, String cedula, String direccion, String telefono) {
+    // Dato importante: no es lo mismo double que Double, en listas debes de especificar con mayuscula
+    // double es un tipo primitivo, Double es de los tipos de referencia (Gracias ChatGPT aprender es divertido :D)
+
+    //Ojala pronto veamos algo como diccionarios para el manejo de estos datos :D
+
+    public Cliente(String nombre, String cedula, String direccion, String telefono) { // Dejo solo esos datos a pedir ya que lo otro dependera de los metodos
         super(nombre, cedula, direccion, telefono);
         this.cuenta_activa = false;
         this.nombre_cuenta = nombre_cuenta;
         this.tipo_cuenta = tipo_cuenta;
         this.monto = monto;
         this.num_tarjeta_credito = num_tarjeta_credito;
+        this.monto_base = 0;
     }
 
     @Override
     public void mostrar_rol() {
-        System.out.printf("Rol: %s\n", tipo_cuenta);
+        System.out.printf("\nRol: %s\n", tipo_cuenta);
     }
 
     public boolean ingresar_al_sistema(){
         this.cuenta_activa = true;
-        System.out.println("Ingreso al sistema exitoso.");
+        System.out.println("\nIngreso al sistema exitoso.");
         return true;
     }
 
@@ -53,6 +65,7 @@ public class Cliente extends Persona {
     public void solicitar_prestamo(double monto){
         if (monto > 0 & this.cuenta_activa){
             System.out.printf("Su solicitud de préstamo por $%.2f ha sido enviada a revisión.\n", monto);
+            acumulacion_montos.add(monto);
         }
         else{
             System.out.print("Error\n");
@@ -76,6 +89,26 @@ public class Cliente extends Persona {
         if (!cuenta_existente){
             System.out.printf("No se encontró ninguna cuenta con el nombre '%s'.\n", cuenta_buscada);
         }
+    }
+
+    public void ver_resumen_financiero(){
+        if (acumulacion_montos.isEmpty()){
+            System.out.print("\nNo hay nada... \nIntenta solicitar un prestamo \n");
+        }
+        System.out.printf("\nTu monto actual es de $%d\nAun esta en revision los pedidos de: ", this.monto_base);
+        for (int i = 0; i < acumulacion_montos.size(); i++) {
+            System.out.printf("Monto %d: %d\n", i + 1, acumulacion_montos.get(i)); // Recorrer con un for y imprimir por indices, esto es basico
+        }
+    }
+
+    public Cliente datos(){ // Este metodo no es parte del deber pero lo coloco para ahorrar lineas
+        System.out.print("\nNesecitamos que ingrese sus datos... pls\n");
+        System.out.print(" -- Nombre: "); String nombre = sc.nextLine();
+        System.out.print(" -- Cedula: "); String cedula = sc.nextLine();
+        System.out.print(" -- Direccion: "); String direccion = sc.nextLine();
+        System.out.print(" -- Telefono: "); String telefono = sc.nextLine();
+        Cliente cliente_de_prueba = new Cliente(nombre, cedula, direccion, telefono);
+        return cliente_de_prueba; // Descubir que colocando la clase se hace un metodo que retoner objetos. Los objetos chocan?
     }
 
 }

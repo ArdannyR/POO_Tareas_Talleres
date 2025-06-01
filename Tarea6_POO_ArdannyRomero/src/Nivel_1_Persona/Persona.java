@@ -1,7 +1,10 @@
 package Nivel_1_Persona;
 
+import Nivel_2.Cliente;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public abstract class Persona { // Clase abstracta: clase que no puede ser instanciada directamente
     // No se puede instancias ya que puede contener métodos sin definir
@@ -10,13 +13,7 @@ public abstract class Persona { // Clase abstracta: clase que no puede ser insta
     protected String direccion;
     protected String telefono;
 
-    public List<List<String>> cuentas = new ArrayList<>(); // Esta es una lista de listas (matriz) Se que no hemos visto esto a profundidad en clases, mas la anteior se nos dios libertad a indagar y suarlas
-    // Funcionamiento
-    // Lista<String> usuario = new ArrayList<>();
-    // usuario.add("alguna info")
-    // cuentas.add(usuario)
-
-    //Ojala pronto veamos algo como diccionarios para el manejo de estos datos :D
+    public Scanner sc = new Scanner(System.in);
 
     public Persona (String nombre, String cedula, String direccion, String telefono){ // Una clase abstracta puede tener un constructor, pero no puede ser abstracto.
         this.nombre = nombre;
