@@ -1,4 +1,4 @@
-package Postulante;
+package postulante;
 
 import java.util.Scanner;
 
@@ -46,5 +46,7 @@ public class Main {
         p1.mostrarDatos();
         p2.mostrarDatos();
         p3.mostrarDatos();
+
+        sc.close();
     }
 }

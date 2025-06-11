@@ -1,4 +1,4 @@
-package Postulante;
+package postulante;
 
 public class Postulante {
     private String nombre;
