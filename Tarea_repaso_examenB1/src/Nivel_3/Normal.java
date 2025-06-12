@@ -24,10 +24,10 @@ public class Normal extends Servicio {
 
     @Override
     public Normal llenar_datos_faltantes(String nombre, int edad, boolean clase, Scanner sc){
-        System.out.print("Ingrese la localizacion de sus asientos: "); this.asientos = sc.nextLine();
+        System.out.print("Ingrese la localizacion de sus asientos: "); asientos = sc.nextLine();
         System.out.print("Clase normal solo puede llevar 1 maleta, desea colocar una extra (si o no): "); String maleta_extra = sc.nextLine();
         if (maleta_extra.equals("si")){
-            System.out.print("Ingrese numero de maletas: "); this.maletas = sc.nextInt(); sc.nextLine();
+            System.out.print("Ingrese numero de maletas: "); maletas = sc.nextInt(); sc.nextLine();
             while (maletas <=1) {
                 System.out.print("Error! Ingrese numero de maletas: "); maletas = sc.nextInt(); sc.nextLine();
             }

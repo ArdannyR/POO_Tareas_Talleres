@@ -1,5 +1,6 @@
 package Nivel_1;
 
+import Nivel_2.Ticket;
 import Nivel_3.Normal;
 import Nivel_3.VIP;
 
@@ -17,13 +18,14 @@ public class Main {
         VIP pasajero_vip_1 = null; // estos aunque ya tenga abajo nulls, los necesito para que no de errores al llamar a metodos
         Normal pasajero_normal_1 = null;
         Ruta ruta = null;
+        Ticket ticket = null;
 
         // Login --------------------------------------------------------------------------------
         Pasajero pasajero_1 = pasajero_null.inicio(sc);
         if (pasajero_1.getEdad() >= 18){
             do {
                 System.out.print("\n* * * * * * * * * Sistema de Tickets * * * * * * * * * ");
-                System.out.print("\n1. Definir clase \n2. Definir ruta \n3. Informacion de selecciones \n4. Aceptar compra \n0. Salir");
+                System.out.print("\n1. Definir clase \n2. Definir ruta \n3. Informacion de pasajero \n4. Compra de ticket \n0. Salir");
                 System.out.print("\nSeleccione una opcion (0 para salir): "); opcion_nivel_1 = sc.nextInt(); sc.nextLine();
                 switch (opcion_nivel_1){
                     case 1:
@@ -42,13 +44,26 @@ public class Main {
                     case 3:
                         if (pasajero_vip_1 != null){
                             pasajero_vip_1.ver_resumen();
+                            ruta.ver_resumen_ruta();
                         }
                         else if (pasajero_normal_1 != null){
-                            pasajero_normal_1.ver_resumen();;
+                            pasajero_normal_1.ver_resumen();
+                            ruta.ver_resumen_ruta();
                         }
                         else {
                             System.out.print("Pasajero no definido");
                         }
+                        break;
+                    case 4:
+                        if (ruta != null){
+                            Ticket ticket_1 = new Ticket(ruta.getRuta(),ruta.getPasaje(), ruta.isSentido_de_vieje());
+                            ticket_1.compra(ruta,sc);
+                            opcion_nivel_1 = 0;
+                        }
+                        else {
+                            System.out.print("Ruta y pasajero sin definir");
+                        }
+                        break;
                 }
             }  while (opcion_nivel_1 != 0);
         }
