@@ -13,4 +13,9 @@ public class Normal extends Servicio {
         this.maletas = maletas;
         this.maletas_extra = maletas_extra;
     }
+
+    @Override
+    public void ver_resumen(String nombre, int edad, boolean clase){
+        System.out.printf("\nPasajero: %s \nEdad: %d \nClase", nombre, edad, clase);
+    }
 }
