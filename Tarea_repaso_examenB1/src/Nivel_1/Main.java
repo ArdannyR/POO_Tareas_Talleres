@@ -14,6 +14,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Pasajero pasajero_null = new Pasajero(null,0);
         Ruta ruta_null = new Ruta(0,0,false);
+        VIP pasajero_vip_1 = null; // estos aunque ya tenga abajo nulls, los necesito para que no de errores al llamar a metodos
+        Normal pasajero_normal_1 = null;
+        Ruta ruta = null;
 
         // Login --------------------------------------------------------------------------------
         Pasajero pasajero_1 = pasajero_null.inicio(sc);
@@ -26,17 +29,26 @@ public class Main {
                     case 1:
                         if (pasajero_1.definir_clase(pasajero_1,sc)){
                             VIP pasajero_vip_null = new VIP(pasajero_1.getNombre(),pasajero_1.getEdad(),true,null,0,false, null);
-
+                            pasajero_vip_1 = pasajero_vip_null.llenar_datos_faltantes(pasajero_1.getNombre(), pasajero_1.getEdad(), true, sc);
                         }
                         else {
                             Normal pasajero_normal_null = new Normal(pasajero_1.getNombre(), pasajero_1.getEdad(), false, null, 0, false);
+                            pasajero_normal_1 = pasajero_normal_null.llenar_datos_faltantes(pasajero_normal_null.getNombre(), pasajero_normal_null.getEdad(), false, sc);
                         }
                         break;
                     case 2:
-                            Ruta ruta = ruta_null.inicializacion_de_ruta(sc);
+                            ruta = ruta_null.inicializacion_de_ruta(sc);
                         break;
                     case 3:
-
+                        if (pasajero_vip_1 != null){
+                            pasajero_vip_1.ver_resumen();
+                        }
+                        else if (pasajero_normal_1 != null){
+                            pasajero_normal_1.ver_resumen();;
+                        }
+                        else {
+                            System.out.print("Pasajero no definido");
+                        }
                 }
             }  while (opcion_nivel_1 != 0);
         }

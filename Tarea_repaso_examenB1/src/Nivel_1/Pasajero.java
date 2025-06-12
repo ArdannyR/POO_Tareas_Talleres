@@ -14,7 +14,7 @@ public class Pasajero {
     // Metodos normales
     public boolean definir_clase(Pasajero pasajero, Scanner sc){
         System.out.print("\nQue clase desea elegir? (true = VIP, false = Normal)");
-        System.out.print("\nOpcion: "); boolean clase = sc.nextBoolean();
+        System.out.print("\nOpcion: "); boolean clase = sc.nextBoolean(); sc.nextLine();
         if (clase){
             return true;
         }

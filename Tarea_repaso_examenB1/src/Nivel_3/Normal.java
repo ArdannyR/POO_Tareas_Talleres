@@ -19,18 +19,18 @@ public class Normal extends Servicio {
     @Override
     public void ver_resumen(){
         String str_clase = "Normal";
-        System.out.printf("\nPasajero: %s \nEdad: %d \nClase: %s \nAsientos: %s \nMaletas: %d \nMaletas extras: %b", getNombre(), getEdad(), str_clase, this.asientos, this.maletas, this.maletas_extra);
+        System.out.printf("\n* * * * * * * * * * *\nPasajero: %s \nEdad: %d \nClase: %s \nAsientos: %s \nMaletas: %d \nMaletas extras: %b\n* * * * * * * * * * *\n", getNombre(), getEdad(), str_clase, this.asientos, this.maletas, this.maletas_extra);
     }
 
     @Override
     public Normal llenar_datos_faltantes(String nombre, int edad, boolean clase, Scanner sc){
         System.out.print("Ingrese la localizacion de sus asientos: "); this.asientos = sc.nextLine();
         System.out.print("Clase normal solo puede llevar 1 maleta, desea colocar una extra (si o no): "); String maleta_extra = sc.nextLine();
-        if (maleta_extra == "si"){
+        if (maleta_extra.equals("si")){
             System.out.print("Ingrese numero de maletas: "); this.maletas = sc.nextInt(); sc.nextLine();
-            do {
-                System.out.print("Error! Ingrese numero de maletas: "); this.maletas = sc.nextInt(); sc.nextLine();
-            } while (maletas <= 1);
+            while (maletas <=1) {
+                System.out.print("Error! Ingrese numero de maletas: "); maletas = sc.nextInt(); sc.nextLine();
+            }
             this.maletas_extra = true;
         }
         else {
