@@ -20,20 +20,23 @@ public class Main {
         if (pasajero_1.getEdad() >= 18){
             do {
                 System.out.print("\n* * * * * * * * * Sistema de Tickets * * * * * * * * * ");
-                System.out.print("\n1. Definir clase \n2. Definir ruta \n3. Aceptar compra \n0. Salir");
+                System.out.print("\n1. Definir clase \n2. Definir ruta \n3. Informacion de selecciones \n4. Aceptar compra \n0. Salir");
                 System.out.print("\nSeleccione una opcion (0 para salir): "); opcion_nivel_1 = sc.nextInt(); sc.nextLine();
                 switch (opcion_nivel_1){
                     case 1:
                         if (pasajero_1.definir_clase(pasajero_1,sc)){
-                            VIP pasajero_vip_1 = new VIP(pasajero_1.getNombre(),pasajero_1.getEdad(),true,null,0,false);
+                            VIP pasajero_vip_null = new VIP(pasajero_1.getNombre(),pasajero_1.getEdad(),true,null,0,false, null);
+
                         }
                         else {
-                            Normal pasajero_normal_1 = new Normal(pasajero_1.getNombre(), pasajero_1.getEdad(), false, null, 0, false);
+                            Normal pasajero_normal_null = new Normal(pasajero_1.getNombre(), pasajero_1.getEdad(), false, null, 0, false);
                         }
                         break;
                     case 2:
                             Ruta ruta = ruta_null.inicializacion_de_ruta(sc);
                         break;
+                    case 3:
+
                 }
             }  while (opcion_nivel_1 != 0);
         }
