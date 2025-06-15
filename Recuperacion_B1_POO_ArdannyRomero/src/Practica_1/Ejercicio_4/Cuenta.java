@@ -1,4 +1,4 @@
-package Ejercicio_4;
+package Practica_1.Ejercicio_4;
 
 public class Cuenta {
     private String password;

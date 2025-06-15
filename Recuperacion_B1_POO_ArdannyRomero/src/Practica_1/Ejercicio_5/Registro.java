@@ -1,4 +1,4 @@
-package Ejercicio_5;
+package Practica_1.Ejercicio_5;
 
 public class Registro {
     private final String codigo = "REG-001";

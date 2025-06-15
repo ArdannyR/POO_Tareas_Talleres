@@ -1,4 +1,4 @@
-package Ejercicio_10;
+package Practica_1.Ejercicio_10;
 
 public class Empleado {
     public String departamento = "Ventas";

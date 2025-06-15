@@ -1,4 +1,4 @@
-package Ejercicio_7;
+package Practica_1.Ejercicio_7;
 
 public class Producto {
     private String nombre = "";

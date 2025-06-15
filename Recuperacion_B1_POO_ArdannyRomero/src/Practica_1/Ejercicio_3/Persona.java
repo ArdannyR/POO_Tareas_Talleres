@@ -1,4 +1,4 @@
-package Ejercicio_3;
+package Practica_1.Ejercicio_3;
 
 public class Persona {
     private int edad;

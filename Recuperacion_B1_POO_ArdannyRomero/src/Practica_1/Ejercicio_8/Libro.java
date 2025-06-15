@@ -1,4 +1,4 @@
-package Ejercicio_8;
+package Practica_1.Ejercicio_8;
 
 public class Libro {
     private String titulo = "";

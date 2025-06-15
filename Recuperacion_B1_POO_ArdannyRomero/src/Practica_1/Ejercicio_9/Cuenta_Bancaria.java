@@ -1,4 +1,4 @@
-package Ejercicio_9;
+package Practica_1.Ejercicio_9;
 
 public class Cuenta_Bancaria {
     private String titular = "";

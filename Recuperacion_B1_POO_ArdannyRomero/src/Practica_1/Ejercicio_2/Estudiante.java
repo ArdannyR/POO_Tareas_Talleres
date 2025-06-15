@@ -1,4 +1,4 @@
-package Ejercicio_2;
+package Practica_1.Ejercicio_2;
 
 public class Estudiante {
     private String matricula;

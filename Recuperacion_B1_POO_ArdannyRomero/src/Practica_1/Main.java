@@ -1,11 +1,16 @@
-import Ejercicio_1.Producto;
-import Ejercicio_10.Empleado;
-import Ejercicio_3.Persona;
-import Ejercicio_4.Cuenta;
-import Ejercicio_5.Registro;
-import Ejercicio_6.Estudiante;
-import Ejercicio_8.Libro;
-import Ejercicio_9.Cuenta_Bancaria;
+package Practica_1;
+
+import Practica_1.Ejercicio_1.Producto;
+import Practica_1.Ejercicio_10.Empleado;
+import Practica_1.Ejercicio_11.Vehiculo;
+import Practica_1.Ejercicio_12.Cliente;
+import Practica_1.Ejercicio_13.Pelicula;
+import Practica_1.Ejercicio_3.Persona;
+import Practica_1.Ejercicio_4.Cuenta;
+import Practica_1.Ejercicio_5.Registro;
+import Practica_1.Ejercicio_6.Estudiante;
+import Practica_1.Ejercicio_8.Libro;
+import Practica_1.Ejercicio_9.Cuenta_Bancaria;
 
 import java.util.Scanner;
 
@@ -13,21 +18,22 @@ public class Main {
     public static void main(String[] args) {
         // Instancias de ayuda
         Scanner sc = new Scanner(System.in);
-        // \n
-        // System.out.print("\n\n * * * * Ejercicio * * * * ");
-        // ñ
+        // ñ   el Alt + 0241 no me sirve en IJ
 
         // Instancias
         Producto producto = new Producto();
-        Ejercicio_2.Estudiante estudiante = new Ejercicio_2.Estudiante();
+        Practica_1.Ejercicio_2.Estudiante estudiante = new Practica_1.Ejercicio_2.Estudiante();
         Persona persona = new Persona(0);
         Cuenta cuenta = new Cuenta(null);
         Registro registro = new Registro();
         Estudiante estudiante_ej6 = new Estudiante("","");
-        Ejercicio_7.Producto producto_ej7 = new Ejercicio_7.Producto("",0); // Se fueron 2 clases prod, pero como les tenia en diferentes packages me permitio llamar con punto
+        Practica_1.Ejercicio_7.Producto producto_ej7 = new Practica_1.Ejercicio_7.Producto("",0); // Se fueron 2 clases prod, pero como les tenia en diferentes packages me permitio llamar con punto
         Libro libro = new Libro("",0);
         Cuenta_Bancaria cuentaBancaria = new Cuenta_Bancaria("",0);
         Empleado empleado = new Empleado("Ventas","",0);
+        Vehiculo vehiculo = new Vehiculo("Automóvil", 0,"","Toyota");
+        Cliente cliente = new Cliente(true,"","");
+        Pelicula pelicula = new Pelicula("", 2024, "", 0);
 
         // Variables
         String matricula_ej2;
@@ -43,6 +49,11 @@ public class Main {
         double saldo_ej9;
         String nombre_ej10;
         double salario_ej10;
+        String placa_ej11;
+        String nombre_ej12;
+        String telefono_ej12;
+        String director_ej13;
+        double duracion_ej13;
 
         // Ejercicio 1
         System.out.print("\n\n * * * * Ejercicio 1 * * * * ");
@@ -104,5 +115,23 @@ public class Main {
         System.out.printf("El empleado/a %s del departamento de %s, trabaja en el horario de %s y gana un salario de $%.2f", empleado.getNombre(), empleado.departamento, empleado.horario, empleado.getSalario() );
 
         // Ejercicio 11
+        System.out.print("\n\n * * * * Ejercicio 11 * * * * ");
+        System.out.print("\nIngresa la velocidad maxima del vehiculo: "); vehiculo.velocidad_maxima = sc.nextInt(); sc.nextLine();
+        System.out.print("Ingresa la placa del vehiculo: "); placa_ej11 = sc.nextLine(); vehiculo.setPlaca(placa_ej11);
+        vehiculo.mostrar_info();
+
+        // Ejercicio 12
+        System.out.print("\n\n * * * * Ejercicio 12 * * * * ");
+        System.out.print("\nIngresa el codigo del cliente: "); cliente.codigo_cliente = sc.nextInt(); sc.nextLine();
+        System.out.print("Ingresa el nombre del cliente: "); nombre_ej12 = sc.nextLine(); cliente.setNombre(nombre_ej12);
+        System.out.print("Ingresa el telefono del cliente: "); telefono_ej12 = sc.nextLine(); cliente.setTelefono(telefono_ej12);
+        cliente.ver_cliente();
+
+        // Ejercicio 13
+        System.out.print("\n\n * * * * Ejercicio 13 * * * * ");
+        System.out.print("\nIngresa el titulo de la pelicula: "); pelicula.titulo = sc.nextLine();
+        System.out.print("Ingresa el nombre del director de la pelicula: "); director_ej13 = sc.nextLine(); pelicula.setDirector(director_ej13);
+        System.out.print("Ingresa la duracion de la pelicula en horas: "); duracion_ej13 = sc.nextDouble(); sc.nextLine(); pelicula.setDuracion(duracion_ej13);
+        pelicula.mostrar_ficha(); // la duracion en double es para minutos o para horas? o era de hacer algun calculo?
     }
 }
