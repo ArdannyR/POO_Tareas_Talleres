@@ -1,10 +1,10 @@
 package Ejercicio_1;
 
 public class Producto {
-    private String nombre;
+    private String nombre = "Cepillo";
 
     public Producto (){
-        this.nombre = "Cepillo";
+        this.nombre = nombre;
     }
 
     public String getNombre() {return nombre;}
