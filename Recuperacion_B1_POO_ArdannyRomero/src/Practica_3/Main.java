@@ -14,6 +14,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        // NOTA: Resulta que en esta practica no era de usar clses abstractas mas yo las use, no las voy a cambiar ya que
+        // en realidad no influye mucho en como funcionan loc codigos
+
         // Instancias de ayuda
         Scanner sc = new Scanner(System.in);
         // ñ
