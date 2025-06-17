@@ -7,12 +7,12 @@ public class Patineta extends Transporte {
     private double tiempo = 1.0;   // h
 
     @Override
-    public void iniciarViaje() {
+    public void iniciar_viaje() {
         System.out.print("\n* Patineta activada *");
     }
 
     @Override
-    public double calcularDistancia() {
+    public double calcular_distancia() {
         return velocidad * tiempo;
     }
 }

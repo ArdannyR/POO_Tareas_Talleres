@@ -7,12 +7,12 @@ public class Taxi extends Transporte {
     private double tiempo = 1.5;   // h
 
     @Override
-    public void iniciarViaje() {
+    public void iniciar_viaje() {
         System.out.print("\n* Taxi encendido *");
     }
 
     @Override
-    public double calcularDistancia() {
+    public double calcular_distancia() {
         return velocidad * tiempo;
     }
 }

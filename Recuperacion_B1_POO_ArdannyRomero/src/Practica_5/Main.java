@@ -37,10 +37,10 @@ public class Main {
 
         // Ejercicio 3
         System.out.print("\n\n * * * * Ejercicio 3 * * * * ");
-        taxi.registrarRuta("Av. Quito", "08:00"); taxi.iniciarViaje();
-        patineta.registrarRuta("Parque Central"); patineta.iniciarViaje();
-        System.out.printf("\nDistancia recorrida por Taxi: %.2f km", taxi.calcularDistancia());
-        System.out.printf("\nDistancia recorrida por Patineta: %.2f km", patineta.calcularDistancia());
+        taxi.registrar_ruta("Av. Quito", "08:00"); taxi.iniciar_viaje();
+        patineta.registrar_ruta("Parque Central"); patineta.iniciar_viaje();
+        System.out.printf("\nDistancia recorrida por Taxi: %.2f km", taxi.calcular_distancia());
+        System.out.printf("\nDistancia recorrida por Patineta: %.2f km", patineta.calcular_distancia());
 
     }
 }
