@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Form_1.Form1_Encuesta">
+  <grid id="27dc6" binding="panel_1" layout-manager="GridLayoutManager" row-count="5" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="4" left="4" bottom="4" right="4"/>
+    <constraints>
+      <xy x="20" y="20" width="545" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="line"/>
+    <children>
+      <component id="239e8" class="javax.swing.JTextField" binding="nombre_field">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="410" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="d58f" class="javax.swing.JLabel" binding="nombre_lab">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Nombre: "/>
+        </properties>
+      </component>
+      <component id="af548" class="javax.swing.JLabel" binding="apellido_lab">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Apellido: "/>
+        </properties>
+      </component>
+      <component id="a7444" class="javax.swing.JTextField" binding="edad_field">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="410" height="34"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="3386f" class="javax.swing.JTextField" binding="apellido_field">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="410" height="34"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="b3d0e" class="javax.swing.JLabel" binding="edad_lab">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Edad: "/>
+        </properties>
+      </component>
+      <component id="e9b9e" class="javax.swing.JLabel" binding="resultados_lab">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="410" height="17"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=". . ."/>
+        </properties>
+      </component>
+      <component id="b826a" class="javax.swing.JButton" binding="limpiar_Button">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Limpiar"/>
+        </properties>
+      </component>
+      <component id="55ea5" class="javax.swing.JButton" binding="verificar_Button">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Verificar Edad"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

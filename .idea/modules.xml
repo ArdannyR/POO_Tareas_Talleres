@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Bimestre_1/Bimestre_1.iml" filepath="$PROJECT_DIR$/Bimestre_1/Bimestre_1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Correcion_Prueba1_ArdannyRomero/Correcion_Prueba1_ArdannyRomero.iml" filepath="$PROJECT_DIR$/Correcion_Prueba1_ArdannyRomero/Correcion_Prueba1_ArdannyRomero.iml" />
       <module fileurl="file://$PROJECT_DIR$/Huera_Lucero_Macias_Romero/src/Huera_Lucero_Macias_Romero.iml" filepath="$PROJECT_DIR$/Huera_Lucero_Macias_Romero/src/Huera_Lucero_Macias_Romero.iml" />
       <module fileurl="file://$PROJECT_DIR$/Huera_Lucero_Macias_Romero/Huera_Lucero_Macias_Romero2.iml" filepath="$PROJECT_DIR$/Huera_Lucero_Macias_Romero/Huera_Lucero_Macias_Romero2.iml" />
