@@ -1,3 +1,5 @@
+package Form_Simulador_Bancario.Forms;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +26,6 @@ public class Login_Form extends JFrame{ // extends JFram para llamada externa
         setLocationRelativeTo(null); // esta ya no me manda la ventana a una equina
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(Login_panel);
-
 
         ingresarButton.addActionListener(new ActionListener() {
             @Override
