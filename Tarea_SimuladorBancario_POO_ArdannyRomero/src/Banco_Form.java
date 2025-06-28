@@ -102,7 +102,7 @@ public class Banco_Form extends JFrame{
 
                             historial_panel.setVisible(true);
                             setSize(400,350);
-                            historial_transf_txtar.append(String.format("\n - %s \t$%s ", usuario_externo, monto_str));
+                            historial_transf_txtar.append(String.format("\n - %s \t\t$%s ", usuario_externo, monto_str));
                         } else {
                             JOptionPane.showMessageDialog(null, "Monto invalido. Intente nuevamente.");
                         }
