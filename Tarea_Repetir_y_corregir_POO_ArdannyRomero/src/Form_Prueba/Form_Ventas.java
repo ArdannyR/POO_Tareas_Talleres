@@ -27,8 +27,13 @@ public class Form_Ventas extends JFrame{
                 String cod_de_producto = cod_txtfld_s.getText();
                 if (cod_de_producto.trim().isEmpty()) {
                     JOptionPane.showMessageDialog(null,"Por favor ingrese un codigo a buscar");
-                } else if (cod_de_producto.equals()) {
-                    
+                } else if (prodcuto  != null && cod_de_producto.equals(prodcuto .getCodigo())) {
+                    JOptionPane.showMessageDialog(null, "Producto encontrado: " + prodcuto.getNombre() + "\nStock disponible: " + prodcuto.getStock());
+                    nombre_lab.setText(prodcuto.getNombre());
+                    String precio_txt = String.valueOf(prodcuto.getPrecio_unitario());
+                    precio_u_lab.setText(precio_txt);
+                } else {
+                    JOptionPane.showMessageDialog(null, "El código del producto no coincide o no hay producto cargado.");
                 }
             }
         });

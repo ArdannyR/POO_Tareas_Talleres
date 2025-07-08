@@ -17,7 +17,12 @@ public class Form_Registro extends JFrame{
     private JButton regresarButton;
     private JButton limpiarButton;
 
-    public Form_Registro(){
+    // Se añade una referencia al menú de opciones
+    private Form_Menu_Opciones menuOpciones;
+
+    public Form_Registro(Form_Menu_Opciones menu){
+        this.menuOpciones = menu;
+
         setTitle("Registro");
         setContentPane(panel_registro);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,7 +34,7 @@ public class Form_Registro extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new Form_Menu_Opciones();
+                menuOpciones.setVisible(true); // Muestra el menú nuevamente
             }
         });
         registrarButton.addActionListener(new ActionListener() {
@@ -48,10 +53,13 @@ public class Form_Registro extends JFrame{
                     } else if (precio > 9999.99 || stock > 999.99) {
                         JOptionPane.showMessageDialog(null,"Valores numericos fuera de rango");
                     } else {
-                        Prodcuto prodcuto = new Prodcuto(codigo,nombre,detalle,precio,stock);
+                        // Se crea el objeto producto
+                        Prodcuto producto = new Prodcuto(codigo, nombre, detalle, precio, stock);
+                        // Se pasa el producto registrado al menú de opciones
+                        menuOpciones.setProductoRegistrado(producto);
+                        JOptionPane.showMessageDialog(null, "Datos registrados con exito!");
                         dispose();
-                        new Form_Menu_Opciones();
-                        JOptionPane.showMessageDialog(null,"Datos registrados con exito!");
+                        menuOpciones.setVisible(true); // Se regresa al menú
                     }
                 } catch (Exception p) {
                     JOptionPane.showMessageDialog(null,"Existe un error en los datos");

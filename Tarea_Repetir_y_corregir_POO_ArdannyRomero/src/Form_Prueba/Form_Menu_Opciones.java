@@ -11,6 +11,9 @@ public class Form_Menu_Opciones extends JFrame{
     private JButton ventasButton;
     private JButton verProductosButton;
 
+    // Variable para almacenar el producto que viene de Form_Registro
+    private Prodcuto productoRegistrado;
+
     public Form_Menu_Opciones(){
         setTitle("Menu de Opciones");
         setContentPane(panel_menu_opc);
@@ -23,15 +26,27 @@ public class Form_Menu_Opciones extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                new Form_Registro();
+                // Se pasa la instancia actual de 'this' al formulario de registro
+                new Form_Registro(Form_Menu_Opciones.this);
             }
         });
         ventasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
-                new Form_Ventas(Prodcuto producto);
+                // Se comprueba si existe un producto registrado
+                if (productoRegistrado != null) {
+                    dispose();
+                    // Se abre Form_Ventas y se le pasa el producto
+                    new Form_Ventas(productoRegistrado);
+                } else {
+                    // Si no hay producto, se notifica al usuario
+                    JOptionPane.showMessageDialog(null, "Primero debe registrar un producto.");
+                }
             }
         });
+    }
+    // Método "setter" para que Form_Registro pueda pasar el producto
+    public void setProductoRegistrado(Prodcuto producto) {
+        this.productoRegistrado = producto;
     }
 }
