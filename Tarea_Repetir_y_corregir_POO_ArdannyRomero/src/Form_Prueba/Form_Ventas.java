@@ -12,12 +12,18 @@ public class Form_Ventas extends JFrame{
     
     private JTextField cod_txtfld_s;
     private JButton buscarButton;
+    private JButton calcularButton;
+    private JButton regresarButton;
 
-    public Form_Ventas(Prodcuto prodcuto) {
+    private Form_Menu_Opciones menuOpciones;
+
+    public Form_Ventas(Prodcuto prodcuto, Form_Menu_Opciones menu) {
+        this.menuOpciones = menu;
+
         setTitle("Ventas");
         setContentPane(panel_ventas);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400,175);
+        setSize(425,200);
         setLocationRelativeTo(null);
         setVisible(true);
         
@@ -35,6 +41,46 @@ public class Form_Ventas extends JFrame{
                 } else {
                     JOptionPane.showMessageDialog(null, "El código del producto no coincide o no hay producto cargado.");
                 }
+            }
+        });
+        calcularButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String cantidad_txt = JOptionPane.showInputDialog("Ingrese una cantidad a comprar del producto");
+                    Integer cantidad = Integer.valueOf(cantidad_txt);
+                    String cod_de_producto = cod_txtfld_s.getText();
+                    if (cod_de_producto.trim().isEmpty()) {
+                        JOptionPane.showMessageDialog(null,"Por favor ingrese un codigo a buscar");
+                    } else if (prodcuto  != null && cod_de_producto.equals(prodcuto .getCodigo())) {
+                        if (cantidad > prodcuto.getStock()) {
+                            JOptionPane.showMessageDialog(null,"Stock fuera de rango");
+                        }
+                        else {
+                            Double subtotal = prodcuto.getPrecio_unitario() * cantidad;
+                            Double iva = subtotal * 0.12;
+                            Double total = subtotal * 1.12;
+                            String mensaje = String.format("Subtotal: %.2f \nIva: %.2f \nTotal: %.2f", subtotal, iva, total);
+                            prodcuto.setStock(prodcuto.getStock()-cantidad);
+                            JOptionPane.showMessageDialog(null,mensaje);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "El código del producto no coincide o no hay producto cargado.");
+                    }
+                } catch (Exception p){
+                    JOptionPane.showMessageDialog(null,"Hay un error en los datos ingresados");
+                }
+            }
+        });
+        regresarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // 1. Devuelve el producto (con el stock ya actualizado) al menú
+                menuOpciones.setProductoRegistrado(prodcuto);
+                // 2. Muestra nuevamente el menú
+                menuOpciones.setVisible(true);
+                // 3. Cierra la ventana actual de ventas
+                dispose();
             }
         });
     }

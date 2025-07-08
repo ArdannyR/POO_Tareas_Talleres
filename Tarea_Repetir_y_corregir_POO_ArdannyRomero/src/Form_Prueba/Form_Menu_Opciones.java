@@ -37,10 +37,22 @@ public class Form_Menu_Opciones extends JFrame{
                 if (productoRegistrado != null) {
                     dispose();
                     // Se abre Form_Ventas y se le pasa el producto
-                    new Form_Ventas(productoRegistrado);
+                    new Form_Ventas(productoRegistrado, Form_Menu_Opciones.this);
                 } else {
                     // Si no hay producto, se notifica al usuario
                     JOptionPane.showMessageDialog(null, "Primero debe registrar un producto.");
+                }
+            }
+        });
+        verProductosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (productoRegistrado != null) {
+                    String infoProducto = String.format("--- Información del Producto ---\nCódigo: %s\nNombre: %s\nDetalle: %s\nPrecio: $%.2f\nStock disponible: %d",
+                            productoRegistrado.getCodigo(), productoRegistrado.getNombre(), productoRegistrado.getDetalle(), productoRegistrado.getPrecio_unitario(), productoRegistrado.getStock());
+                    JOptionPane.showMessageDialog(null, infoProducto, "Datos del Producto", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Aún no se ha registrado ningún producto.", "Sin Producto", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
