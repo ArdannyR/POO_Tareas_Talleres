@@ -14,6 +14,7 @@ public class Busqueda_Form_SistHosp extends JFrame{
     private JTextField cedula_pac_txtfld;
     private JButton irARegistrarButton;
     private JButton buscarButton;
+    private JButton salirButton;
 
     public Busqueda_Form_SistHosp(){
         setTitle("Sistema Hospitalario");
@@ -53,6 +54,13 @@ public class Busqueda_Form_SistHosp extends JFrame{
                     // Si no se encontró, informamos al usuario
                     JOptionPane.showMessageDialog(null, "No se encontró ningún paciente con la cédula: " + cedula, "Búsqueda Fallida", JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new Login_Form_SistHosp();
             }
         });
     }

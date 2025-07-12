@@ -1,9 +1,10 @@
 package Tienda_Pord_Cuidado_Personal;
 
+import Sistema_Hospitalario.Login_Form_SistHosp;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,6 +16,7 @@ public class Busqueda_Tiend_Cuid_Pers extends JFrame{
     private JTextField codigo_producto_txtfld;
     private JButton buscarButton;
     private JButton irARegistrarButton;
+    private JButton salirButton;
 
     public Busqueda_Tiend_Cuid_Pers(){
         setTitle("Tienda");
@@ -53,6 +55,13 @@ public class Busqueda_Tiend_Cuid_Pers extends JFrame{
                     // Si no, mostramos un error.
                     JOptionPane.showMessageDialog(null, "No se encontró ningún producto con el código: " + codigoProducto, "Búsqueda Fallida", JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new Login_Form_Tiend_Cuid_Pers();
             }
         });
     }

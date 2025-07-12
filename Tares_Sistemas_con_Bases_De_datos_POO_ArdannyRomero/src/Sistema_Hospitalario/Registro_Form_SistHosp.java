@@ -19,6 +19,7 @@ public class Registro_Form_SistHosp extends JFrame{
     private JTextArea descrip_enfermedad_txtarea;
     private JButton irABuscarButton;
     private JButton registrarButton;
+    private JButton salirButton;
 
     public Registro_Form_SistHosp(){
         setTitle("Sistema Hospitalario");
@@ -69,6 +70,13 @@ public class Registro_Form_SistHosp extends JFrame{
                     // Este error ocurre si el usuario escribe texto en campos numéricos (edad, historial)
                     JOptionPane.showMessageDialog(null, "Por favor, ingrese un número válido para la edad y el historial clínico.", "Error de Formato", JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new Login_Form_SistHosp();
             }
         });
     }

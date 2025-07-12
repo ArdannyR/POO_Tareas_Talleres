@@ -19,6 +19,7 @@ public class Registro_Tiend_Cuid_Pers extends JFrame {
     private JTextArea descripcion_txtarea;
     private JButton registrarButton;
     private JButton irABuscarButton;
+    private JButton salirButton;
 
     public Registro_Tiend_Cuid_Pers() {
         setTitle("Tienda");
@@ -70,6 +71,13 @@ public class Registro_Tiend_Cuid_Pers extends JFrame {
                     // Este error ocurre si el usuario escribe texto en campos numéricos
                     JOptionPane.showMessageDialog(null, "Por favor, ingrese un número válido para el precio y la cantidad.", "Error de Formato", JOptionPane.ERROR_MESSAGE);
                 }
+            }
+        });
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new Login_Form_Tiend_Cuid_Pers();
             }
         });
     }
