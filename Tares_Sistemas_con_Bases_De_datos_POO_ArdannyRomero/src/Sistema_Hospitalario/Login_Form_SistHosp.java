@@ -33,7 +33,7 @@ public class Login_Form_SistHosp extends JFrame{
                     JOptionPane.showMessageDialog(null, "Por favor, ingrese su usuario y contraseña.");
                 } else if (validarUsuario(usuario, clave)) {
                     JOptionPane.showMessageDialog(null, "¡Login exitoso! Bienvenido al sistema.");
-                    dispose();
+                    setVisible(false);
                     new Busqueda_Form_SistHosp();
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.");
