@@ -60,7 +60,7 @@ public class Busqueda_Form_SistHosp extends JFrame{
     private Paciente buscarPacientePorCedula(String cedula) {
         String sql = "SELECT * FROM paciente WHERE cedula = ?";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DatabaseConnection_Sistema_Hospitalario.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             if (conn == null) return null;

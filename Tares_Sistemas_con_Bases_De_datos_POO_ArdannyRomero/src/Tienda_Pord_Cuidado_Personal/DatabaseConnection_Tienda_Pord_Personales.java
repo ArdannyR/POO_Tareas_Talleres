@@ -4,9 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DatabaseConnection {
+public class DatabaseConnection_Tienda_Pord_Personales {
     // URL de conexión a la base de datos
-    private static final String URL = "jdbc:mysql://localhost:3306/sistema_hospitalario_poo";
+    private static final String URL = "jdbc:mysql://localhost:3306/tienda_pord_personales_poo";
     // Usuario de la base de datos
     private static final String USER = "root"; // Reemplaza con tu usuario de MySQL (usualmente 'root')
     // Contraseña de la base de datos

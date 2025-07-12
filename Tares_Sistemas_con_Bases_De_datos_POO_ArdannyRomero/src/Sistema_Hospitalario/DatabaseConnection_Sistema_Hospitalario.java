@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DatabaseConnection {
+public class DatabaseConnection_Sistema_Hospitalario {
     // URL de conexión a la base de datos
     private static final String URL = "jdbc:mysql://localhost:3306/sistema_hospitalario_poo";
     // Usuario de la base de datos

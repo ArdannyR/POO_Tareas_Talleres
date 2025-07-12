@@ -47,7 +47,7 @@ public class Login_Form_SistHosp extends JFrame{
         // Esta es la instrucción SQL. Busca en la tabla "usuario" una fila
         // donde la columna "username" y "password" coincidan con lo que se ingresó.
         String sql = "SELECT * FROM usuario WHERE username = ? AND password = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DatabaseConnection_Sistema_Hospitalario.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             if (conn == null) {
                 return false;

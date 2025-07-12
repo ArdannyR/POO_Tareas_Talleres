@@ -77,7 +77,7 @@ public class Registro_Form_SistHosp extends JFrame{
         // Instrucción SQL para insertar un nuevo registro en la tabla 'paciente'
         String sql = "INSERT INTO paciente (cedula, n_historial_clinico, nombre, apellido, telefono, edad, descripcion_enfermedad) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DatabaseConnection_Sistema_Hospitalario.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             if (conn == null) return false;
